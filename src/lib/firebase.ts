@@ -1,8 +1,9 @@
-// place files you want to import through the `$lib` alias in this folder.
+// import SDKs from firebase and export them as variables down below.
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { getAuth, onAuthStateChanged, type User } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
+import { writable } from "svelte/store";
 
 
 
@@ -17,8 +18,43 @@ const firebaseConfig = {
   measurementId: "G-66H5VYMKVG"
 };
 
-
+// export SDKs as variables to simplify import process
+// in other files by using the $lib alias
+// eg. => import { auth } from '$lib/fireabse'
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
 export const db = getFirestore();
 export const storage = getStorage();
+
+
+
+/**
+ * @returns a store with the current firebase user
+ */
+
+function userStore() {
+  let unsubscribe: () => void;
+
+  if (!auth || !globalThis.window) {
+    console.warn('Auth is not initialized or not in browser');
+    const { subscribe } = writable<User | null>(null);
+    return {
+      subscribe,
+    }
+  }
+
+  const { subscribe } = writable(auth?.currentUser ?? null, (set) => {
+    unsubscribe = onAuthStateChanged(auth, (user) => {
+      set(user);
+    });
+
+    return () => unsubscribe();
+  });
+
+    return { 
+      subscribe,
+    };
+}
+
+
+export const user = userStore();
