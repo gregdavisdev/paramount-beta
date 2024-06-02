@@ -89,8 +89,8 @@
           @{username} is not available
         </p>
       {/if}
-      {#if isAvailable && !loading}
-        <button class="btn btn-primary">Confirm username @{username} </button>
+      {#if isAvailable && isValid && !loading}
+        <button class="btn btn-success">Confirm username @{username} </button>
       {/if}
 
     </div>
