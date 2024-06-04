@@ -4,7 +4,6 @@
 
   $user;
   $userData;
-  
 </script>
   
 <div class="navbar bg-base-100">
