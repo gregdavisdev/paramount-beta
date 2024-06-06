@@ -26,10 +26,10 @@
   </div>
 </div>
 
-<div class="card flex-row space-x-4">
-  <div class="w-96 bg-base-100">
+<div class="card flex-row space-x-4 justify-center p-10">
+  <div class="w-90 bg-base-100">
     <figure>
-      <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
+      <img class="w-40" src="vascular_health.svg" alt="Vascular Health" />
     </figure>
     <div class="card-body">
       <h2 class="card-title">Vascular Health</h2>
@@ -37,9 +37,9 @@
     </div>
   </div>
 
-  <div class="w-96 bg-base-100">
+  <div class="w-90 bg-base-100">
     <figure>
-      <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
+      <img class="w-40" src="pulmonary.svg" alt="Pulmonary" />
     </figure>
     <div class="card-body">
       <h2 class="card-title">Pulmonology Care</h2>
@@ -47,9 +47,9 @@
     </div>
   </div>
 
-  <div class="w-96 bg-base-100">
+  <div class="w-90 bg-base-100">
     <figure>
-      <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
+      <img class="w-40" src="capsules.svg" alt="Wellness" />
     </figure>
     <div class="card-body">
       <h2 class="card-title">Wellness Support</h2>
@@ -57,9 +57,9 @@
     </div>
   </div>
 
-  <div class="w-96 bg-base-100">
+  <div class="w-90 bg-base-100">
     <figure>
-      <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
+      <img class="w-40" src="heart-health-muscle.svg" alt="Health" />
     </figure>
     <div class="card-body">
       <h2 class="card-title">DNA Testing</h2>
