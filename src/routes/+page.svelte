@@ -33,7 +33,7 @@
     </figure>
     <div class="card-body">
       <h2 class="card-title">Vascular Health</h2>
-      <p>Our visual emphasis on heart wellness extends beyond the surface.</p>
+      <p class="text-gray-500">Our visual emphasis on heart wellness extends beyond the surface.</p>
     </div>
   </div>
 
@@ -43,7 +43,7 @@
     </figure>
     <div class="card-body">
       <h2 class="card-title">Pulmonology Care</h2>
-      <p>We stabilize patients with pulmonary conditions impacting breathing.</p>
+      <p class="text-gray-500">We stabilize patients with pulmonary conditions impacting breathing.</p>
     </div>
   </div>
 
@@ -53,7 +53,7 @@
     </figure>
     <div class="card-body">
       <h2 class="card-title">Wellness Support</h2>
-      <p>Experience care that goes beyond the superficial, with clear and concise text.</p>
+      <p class="text-gray-500">Experience care that goes beyond the superficial, with clear and concise text.</p>
     </div>
   </div>
 
@@ -63,7 +63,14 @@
     </figure>
     <div class="card-body">
       <h2 class="card-title">DNA Testing</h2>
-      <p>We offer empowering guidance for the longevity of your DNA random.</p>
+      <p class="text-gray-500">We offer empowering guidance for the longevity of your DNA random.</p>
     </div>
   </div>
 </div>
+
+<div class="text-center pb-12">
+  <h2 class="text-4xl p-6">We Care About Your Journey</h2>
+  <p class="text-gray-500 text-xl">Each team member contributes a unique set of skills and passion,</p>
+  <p class="text-gray-500 text-xl">united by a shared commitment to delivering exceptional healthcare</p>
+  <p class="text-gray-500 text-xl">experiences.</p>
+</div> 
