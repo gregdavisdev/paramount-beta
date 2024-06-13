@@ -5,9 +5,7 @@
   $user;
   $userData;
 
-  let username;
 
-  $: username = $userData?.username;
 </script>
   
 <div class="navbar bg-base-100">
@@ -39,7 +37,7 @@
       </div>
       <ul class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
         <li>
-          <a href={`/${username}`} class="justify-between">
+          <a href={`/${$userData?.username}`} class="justify-between">
             Profile</a>
         </li>
         <li><a href="/settings">Settings</a></li>

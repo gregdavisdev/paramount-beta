@@ -7,14 +7,11 @@
   let previewURL: string;
   let uploading = false;
   $: href = `/${$userData?.username}/edit`;
-  let objectURLs: string[] = [];
 
   async function upload(e: any) {
     uploading = true;
     const file = e.target.files[0];
     previewURL = URL.createObjectURL(file);
-    objectURLs.push(previewURL);
-    console.log(objectURLs);
     const storageRef = ref(storage, `users/${$user!.uid}/profile.png`);
     const result = await uploadBytes(storageRef, file);
     const url = await getDownloadURL(result.ref);

@@ -2,7 +2,7 @@ import { adminAuth, adminDB } from "$lib/server/admin";
 import { error, redirect } from "@sveltejs/kit";
 import type { PageServerLoad } from "./$types";
 
-export const load = (async ({ locals, params }) => {
+export const load: PageServerLoad = (async ({ locals, params }) => {
     
     const uid = locals.userID;
 
@@ -21,4 +21,4 @@ export const load = (async ({ locals, params }) => {
         bio,
     };
     
-}) satisfies PageServerLoad
+});
