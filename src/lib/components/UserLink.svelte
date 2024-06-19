@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   export let icon = 'default';
   export let url = 'default url';
   export let title = 'default title';

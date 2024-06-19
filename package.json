@@ -25,6 +25,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@splinetool/viewer": "^1.6.9",
 		"firebase": "^10.12.2",
 		"firebase-admin": "^12.1.1"
 	}

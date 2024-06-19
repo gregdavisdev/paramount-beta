@@ -3,7 +3,7 @@ import { collection, getDocs, limit, query, where } from 'firebase/firestore';
 import { db } from '$lib/firebase';
 import { error } from '@sveltejs/kit';
 
-export const load = (async ({params}) => {
+export const load: PageLoad = (async ({ params }) => {
     const collectionRef = collection(db, "users");
     const q = query(
         collectionRef,
@@ -29,4 +29,4 @@ export const load = (async ({params}) => {
         bio: data.bio,
         links: data.links ?? [],
     };
-}) satisfies PageLoad;
+});

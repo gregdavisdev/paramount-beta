@@ -1,4 +1,4 @@
-import { adminAuth, adminDB } from "$lib/server/admin";
+import { adminDB } from "$lib/server/admin";
 import { error, redirect } from "@sveltejs/kit";
 import type { PageServerLoad } from "./$types";
 

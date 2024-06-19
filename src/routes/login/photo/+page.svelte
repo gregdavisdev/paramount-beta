@@ -16,7 +16,9 @@
     const result = await uploadBytes(storageRef, file);
     const url = await getDownloadURL(result.ref);
 
-    await updateDoc(doc(db, "users", $user!.uid), { photoURL: url});
+    await updateDoc(doc(db, "users", $user!.uid), { photoURL: url });
+
+    URL.revokeObjectURL(previewURL);
     uploading = false;
   }
 </script>
@@ -27,7 +29,7 @@
   <form class="max-w-screen-md w-full">
     <div class="form-control w-full max-w-xs my-10 mx-auto text-center">
       <img 
-        src={previewURL ?? $userData?.photoURL ?? "/user.png"}
+        src={previewURL ?? $userData?.photoURL ?? `default/default-avatar.png`}
         alt="photoURL"
         class="mx-auto"
       />

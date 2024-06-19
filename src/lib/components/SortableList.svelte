@@ -75,7 +75,7 @@
     <p class="text-center my-12 text-lg font-bold">No items to display</p>
 {/if}
 
-<style>
+<style lang="postcss">
   .over {
     @apply border-gray-400 scale-105;
   }

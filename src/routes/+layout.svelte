@@ -5,7 +5,6 @@
   $user;
   $userData;
 
-
 </script>
   
 <div class="navbar bg-base-100">
@@ -32,7 +31,7 @@
     <div class="dropdown dropdown-end">
       <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
         <div class="w-10 rounded-full">
-          <img alt="Tailwind CSS Navbar component" src={$userData?.photoURL} />
+          <img src={$userData?.photoURL ?? `default-avatar.png`} alt="user avatar" />
         </div>
       </div>
       <ul class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
