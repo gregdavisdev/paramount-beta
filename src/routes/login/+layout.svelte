@@ -1,6 +1,6 @@
 <script lang="ts">
     import { page } from "$app/stores";
-    import AnimatedRoute from "$lib/components/AnimatedRoute.svelte";
+    import AnimatedRoute from "$lib/components/ui/animations/AnimatedRoute.svelte";
 
 </script>
 
