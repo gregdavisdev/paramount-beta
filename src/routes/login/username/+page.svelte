@@ -1,5 +1,5 @@
 <script lang="ts">
-  import AuthCheck from "$lib/components/AuthCheck.svelte";
+  import AuthCheck from "$lib/components/logic/AuthCheck.svelte";
   import { db, user, userData } from "$lib/firebase";
   import { doc, getDoc, writeBatch } from "firebase/firestore";
 

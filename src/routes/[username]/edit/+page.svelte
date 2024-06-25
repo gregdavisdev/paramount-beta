@@ -1,6 +1,6 @@
 <script lang="ts">
-    import UserLink from "$lib/components/UserLink.svelte";
-    import SortableList from "$lib/components/SortableList.svelte";
+    import UserLink from "$lib/components/ui/UserLink.svelte";
+    import SortableList from "$lib/components/ui/animations/SortableList.svelte";
     import { page } from "$app/stores";
     import { db, user, userData } from "$lib/firebase";
     import { writable } from "svelte/store";

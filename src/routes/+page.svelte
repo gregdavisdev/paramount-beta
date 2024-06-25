@@ -1,6 +1,8 @@
 <script lang="ts">
-  import AnimatedHero from "$lib/components/AnimatedHero.svelte";
-  import SplineViewer from "$lib/components/SplineViewer.svelte";
+  import AnimatedHero from "$lib/components/ui/animations/AnimatedHero.svelte";
+  import SplineViewer from "$lib/components/ui/animations/SplineViewer.svelte";
+    import ContactForm from "$lib/components/ui/sections/ContactForm.svelte";
+    import ImageTiles from "$lib/components/ui/sections/ImageTiles.svelte";
   import { spring } from "svelte/motion";
 
   let scale = spring(1, { stiffness: 1, damping: 0.6 });
@@ -40,56 +42,7 @@
   </AnimatedHero>
 </div>
 
-<div class="card flex-row space-x-4 justify-center p-10">
-  <div class="w-90 bg-base-100">
-    <figure>
-      <img class="w-32" src="vascular_health.svg" alt="Vascular Health" />
-    </figure>
-    <div class="card-body">
-      <h2 class="card-title">Vascular Health</h2>
-      <p class="text-gray-500">
-        Our visual emphasis on heart wellness extends beyond the surface.
-      </p>
-    </div>
-  </div>
-
-  <div class="w-90 bg-base-100">
-    <figure>
-      <img class="w-32" src="pulmonary.svg" alt="Pulmonary" />
-    </figure>
-    <div class="card-body">
-      <h2 class="card-title">Pulmonology Care</h2>
-      <p class="text-gray-500">
-        We stabilize patients with pulmonary conditions impacting breathing.
-      </p>
-    </div>
-  </div>
-
-  <div class="w-90 bg-base-100">
-    <figure>
-      <img class="w-32" src="capsules.svg" alt="Wellness" />
-    </figure>
-    <div class="card-body">
-      <h2 class="card-title">Wellness Support</h2>
-      <p class="text-gray-500">
-        Experience care that goes beyond the superficial, with clear and concise
-        text.
-      </p>
-    </div>
-  </div>
-
-  <div class="w-90 bg-base-100">
-    <figure>
-      <img class="w-32" src="heart-health-muscle.svg" alt="Health" />
-    </figure>
-    <div class="card-body">
-      <h2 class="card-title">DNA Testing</h2>
-      <p class="text-gray-500">
-        We offer empowering guidance for the longevity of your DNA random.
-      </p>
-    </div>
-  </div>
-</div>
+<ImageTiles />
 
 <div class="text-center pb-12">
   <h2 class="text-4xl p-6">We Care About Your Journey</h2>
@@ -150,63 +103,7 @@
   </div>
 </div>
 
-<div class="bg-white px-6 py-24 sm:py-32 lg:px-8">
-  <div class="mx-auto max-w-2xl text-center">
-    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Partnership Program</h2>
-    <p class="mt-2 text-xl leading-8 text-gray-600">Contact Form</p>
-  </div>
-  <form action="#" method="POST" class="mx-auto mt-10 max-w-xl sm:mt-8">
-    <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-      <div>
-        <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900">First name</label>
-        <div class="mt-2.5">
-          <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-        </div>
-      </div>
-      <div>
-        <label for="last-name" class="block text-sm font-semibold leading-6 text-gray-900">Last name</label>
-        <div class="mt-2.5">
-          <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-        </div>
-      </div>
-      <div class="sm:col-span-2">
-        <label for="company" class="block text-sm font-semibold leading-6 text-gray-900">Company</label>
-        <div class="mt-2.5">
-          <input type="text" name="company" id="company" autocomplete="organization" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-        </div>
-      </div>
-      <div class="sm:col-span-2">
-        <label for="email" class="block text-sm font-semibold leading-6 text-gray-900">Email</label>
-        <div class="mt-2.5">
-          <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-        </div>
-      </div>
-      <div class="sm:col-span-2">
-        <label for="phone-number" class="block text-sm font-semibold leading-6 text-gray-900">Phone number</label>
-        <div class="relative mt-2.5">
-          <div class="absolute inset-y-0 left-0 flex items-center">
-            <label for="country" class="sr-only">Country</label>
-            <select id="country" name="country" class="h-full rounded-md border-0 bg-transparent bg-none py-0 pl-4 pr-5 text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm">
-              <option>US</option>
-              <option>CA</option>
-              <option>EU</option>
-            </select>
-          </div>
-          <input type="tel" name="phone-number" id="phone-number" autocomplete="tel" class="block w-full rounded-md border-0 px-4 py-2 pl-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-        </div>
-      </div>
-      <div class="sm:col-span-2">
-        <label for="message" class="block text-sm font-semibold leading-6 text-gray-900">Message</label>
-        <div class="mt-2.5">
-          <textarea name="message" id="message" rows="4" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
-        </div>
-      </div>
-    </div>
-    <div class="mt-10">
-      <button type="submit" class="block w-full rounded-md bg-blue-700 px-3.5 py-2.5 text-center text-base font-semibold text-white shadow-sm hover:bg-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700">Let's Talk</button>
-    </div>
-  </form>
-</div>
+<ContactForm />
 
 
 
@@ -253,22 +150,22 @@
   </aside>
   <nav>
     <h6 class="footer-title">Services</h6>
-    <a class="link link-hover">Branding</a>
-    <a class="link link-hover">Design</a>
-    <a class="link link-hover">Marketing</a>
-    <a class="link link-hover">Advertisement</a>
+    <div class="link link-hover">Branding</div>
+    <div class="link link-hover">Design</div>
+    <div class="link link-hover">Marketing</div>
+    <div class="link link-hover">Advertisement</div>
   </nav>
   <nav>
     <h6 class="footer-title">Company</h6>
-    <a class="link link-hover">About us</a>
-    <a class="link link-hover">Contact</a>
-    <a class="link link-hover">Jobs</a>
-    <a class="link link-hover">Press kit</a>
+    <div class="link link-hover">About us</div>
+    <div class="link link-hover">Contact</div>
+    <div class="link link-hover">Jobs</div>
+    <div class="link link-hover">Press kit</div>
   </nav>
   <nav>
     <h6 class="footer-title">Legal</h6>
-    <a class="link link-hover">Terms of use</a>
-    <a class="link link-hover">Privacy policy</a>
-    <a class="link link-hover">Cookie policy</a>
+    <div class="link link-hover">Terms of use</div>
+    <div class="link link-hover">Privacy policy</div>
+    <div class="link link-hover">Cookie policy</div>
   </nav>
 </footer>

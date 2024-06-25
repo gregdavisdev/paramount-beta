@@ -49,8 +49,14 @@
     });
   }
 
-  
 </script>
+
+<style lang="postcss">
+  .over {
+    @apply border-gray-400 scale-105;
+  }
+</style>
+
 
 {#if list?.length}
   <ul class="list-none p-0 flex flex-col items-center">
@@ -74,9 +80,3 @@
   {:else}
     <p class="text-center my-12 text-lg font-bold">No items to display</p>
 {/if}
-
-<style lang="postcss">
-  .over {
-    @apply border-gray-400 scale-105;
-  }
-</style>
