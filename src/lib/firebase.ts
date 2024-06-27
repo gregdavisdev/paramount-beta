@@ -51,9 +51,9 @@ function userStore() {
     return () => unsubscribe();
   });
 
-    return { 
-      subscribe,
-    };
+  return {
+    subscribe,
+  };
 }
 
 

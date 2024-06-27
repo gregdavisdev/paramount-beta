@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { flip } from "svelte/animate";
-  import { createEventDispatcher } from "svelte";
+  import { flip } from 'svelte/animate';
+  import { createEventDispatcher } from 'svelte';
 
   export let list: any[];
   let isOver: string | boolean = false;
@@ -11,8 +11,8 @@
     const newList = [...list];
     newList[from] = [newList[to], (newList[to] = newList[from])][0];
 
-    dispatch("sort", newList);
-  }
+    dispatch('sort', newList);
+  };
 
   function getDraggedParent(node: any) {
     if (!node.dataset.index) {
@@ -25,9 +25,9 @@
   function onDragStart(e: DragEvent) {
     // @ts-ignore
     const dragged = getDraggedParent(e.target);
-    e.dataTransfer?.setData("source", dragged?.index.toString());
+    e.dataTransfer?.setData('source', dragged?.index.toString());
   }
-  
+
   function onDragOver(e: DragEvent) {
     // @ts-ignore
     const id = e.target.dataset?.id;
@@ -44,11 +44,10 @@
     isOver = false;
     const dragged = getDraggedParent(e.target);
     reorder({
-      from: e.dataTransfer?.getData("source"),
+      from: e.dataTransfer?.getData('source'),
       to: dragged.index,
     });
   }
-
 </script>
 
 <style lang="postcss">
@@ -57,11 +56,10 @@
   }
 </style>
 
-
 {#if list?.length}
   <ul class="list-none p-0 flex flex-col items-center">
     {#each list as item, index (item.id)}
-      <li 
+      <li
         class="border-2 border-dashed border-transparent p-2 transition-all max-w-md w-full"
         class:over={item.id === isOver}
         data-index={index}
@@ -77,6 +75,6 @@
       </li>
     {/each}
   </ul>
-  {:else}
-    <p class="text-center my-12 text-lg font-bold">No items to display</p>
+{:else}
+  <p class="text-center my-12 text-lg font-bold">No items to display</p>
 {/if}

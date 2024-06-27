@@ -12,6 +12,6 @@ export const handle = (async ({ event, resolve }) => {
     event.locals.userID = null;
     return resolve(event);
   }
-  
+
   return resolve(event);
 }) satisfies Handle

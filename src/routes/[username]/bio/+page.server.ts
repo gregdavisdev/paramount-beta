@@ -3,11 +3,11 @@ import { error, redirect } from "@sveltejs/kit";
 import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = (async ({ locals, params }) => {
-    
+
     const uid = locals.userID;
 
     if (!uid) {
-       throw redirect(301, "/login");
+        throw redirect(301, "/login");
     }
 
     const userDoc = await adminDB.collection("users").doc(uid!).get();
@@ -20,5 +20,5 @@ export const load: PageServerLoad = (async ({ locals, params }) => {
     return {
         bio,
     };
-    
+
 });

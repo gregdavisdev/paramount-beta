@@ -1,30 +1,30 @@
 <script lang="ts">
-    import UserLink from "$lib/components/ui/UserLink.svelte";
-    import SortableList from "$lib/components/ui/animations/SortableList.svelte";
-    import { page } from "$app/stores";
-    import { db, user, userData } from "$lib/firebase";
-    import { writable } from "svelte/store";
+    import UserLink from '$lib/components/ui/UserLink.svelte';
+    import SortableList from '$lib/components/ui/animations/SortableList.svelte';
+    import { page } from '$app/stores';
+    import { db, user, userData } from '$lib/firebase';
+    import { writable } from 'svelte/store';
     import {
         doc,
         setDoc,
         updateDoc,
         arrayUnion,
         arrayRemove,
-    } from "firebase/firestore";
+    } from 'firebase/firestore';
 
     const icons = [
-        "Twitter",
-        "YouTube",
-        "TikTok",
-        "LinkedIn",
-        "GitHub",
-        "Custom",
+        'Twitter',
+        'YouTube',
+        'TikTok',
+        'LinkedIn',
+        'GitHub',
+        'Custom',
     ];
 
     const formDefaults = {
-        icon: "custom",
-        title: "",
-        url: "https://",
+        icon: 'custom',
+        title: '',
+        url: 'https://',
     };
 
     const formData = writable(formDefaults);
@@ -36,7 +36,7 @@
     let showForm = false;
 
     async function addLink(e: SubmitEvent) {
-        const userRef = doc(db, "users", $user!.uid);
+        const userRef = doc(db, 'users', $user!.uid);
 
         await updateDoc(userRef, {
             links: arrayUnion({
@@ -46,16 +46,16 @@
         });
 
         formData.set({
-            icon: "",
-            title: "",
-            url: "",
+            icon: '',
+            title: '',
+            url: '',
         });
 
         showForm = false;
     }
 
     async function deleteLink(item: any) {
-        const userRef = doc(db, "users", $user!.uid);
+        const userRef = doc(db, 'users', $user!.uid);
         await updateDoc(userRef, {
             links: arrayRemove(item),
         });
@@ -63,7 +63,7 @@
 
     function sortList(e: CustomEvent) {
         const newList = e.detail;
-        const userRef = doc(db, "users", $user!.uid);
+        const userRef = doc(db, 'users', $user!.uid);
         setDoc(userRef, { links: newList }, { merge: true });
     }
 
@@ -79,17 +79,14 @@
             Edit your profile
         </h1>
 
-        <SortableList
-            list={$userData?.links}
-            on:sort={sortList}
-            let:item
-        >
+        <SortableList list={$userData?.links} on:sort={sortList} let:item>
             <div class="group relative">
                 <UserLink {...item} />
                 <button
                     on:click={() => deleteLink(item)}
                     class="btn btn-xs btn-error invisible group-hover:visible transition-all absolute -right-6 bottom-10"
-                >Delete</button>
+                    >Delete</button
+                >
             </div>
         </SortableList>
 

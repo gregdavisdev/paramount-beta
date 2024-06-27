@@ -1,15 +1,14 @@
 <script lang="ts">
-  import AnimatedHero from "$lib/components/ui/animations/AnimatedHero.svelte";
-  import SplineViewer from "$lib/components/ui/animations/SplineViewer.svelte";
-  import CardWithImage from "$lib/components/ui/sections/CardWithImage.svelte";
-  import ContactForm from "$lib/components/ui/sections/ContactForm.svelte";
-  import Footer from "$lib/components/ui/sections/Footer.svelte";
-  import ImageTiles from "$lib/components/ui/sections/ImageTiles.svelte";
-    import SubHero from "$lib/components/ui/sections/SubHero.svelte";
-  import { spring } from "svelte/motion";
+  import AnimatedHero from '$lib/components/ui/animations/AnimatedHero.svelte';
+  import SplineViewer from '$lib/components/ui/animations/SplineViewer.svelte';
+  import CardWithImage from '$lib/components/ui/sections/CardWithImage.svelte';
+  import ContactForm from '$lib/components/ui/sections/ContactForm.svelte';
+  import Footer from '$lib/components/ui/sections/Footer.svelte';
+  import ImageTiles from '$lib/components/ui/sections/ImageTiles.svelte';
+  import SubHero from '$lib/components/ui/sections/SubHero.svelte';
+  import { spring } from 'svelte/motion';
 
   let scale = spring(1, { stiffness: 1, damping: 0.6 });
-
 </script>
 
 <div class="hero min-h-screen">
@@ -77,10 +76,3 @@
 <ContactForm />
 
 <Footer />
-
-
-
-
-
-
-

@@ -1,22 +1,23 @@
 <script lang="ts">
-    import { page } from "$app/stores";
-    import AnimatedRoute from "$lib/components/ui/animations/AnimatedRoute.svelte";
-
+    import { page } from '$app/stores';
+    import AnimatedRoute from '$lib/components/ui/animations/AnimatedRoute.svelte';
 </script>
 
 <nav class="flex justify-center my-6">
     <ul class="steps">
-        <a  href="/login" class="step step-primary">Login</a>
-        <a 
+        <a href="/login" class="step step-primary">Login</a>
+        <a
             href="/login/username"
             class="step"
-            class:step-primary={$page.route.id?.match(/username|photo/g)}>
+            class:step-primary={$page.route.id?.match(/username|photo/g)}
+        >
             Username
         </a>
-        <a 
+        <a
             href="/login/photo"
             class="step"
-            class:step-primary={$page.route.id?.match(/photo/g)}>
+            class:step-primary={$page.route.id?.match(/photo/g)}
+        >
             Photo
         </a>
     </ul>

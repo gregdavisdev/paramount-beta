@@ -1,8 +1,8 @@
 <script lang="ts">
-  import AuthCheck from "$lib/components/logic/AuthCheck.svelte";
-  import { user, userData, storage, db } from "$lib/firebase";
-  import { doc, updateDoc } from "firebase/firestore";
-  import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+  import AuthCheck from '$lib/components/logic/AuthCheck.svelte';
+  import { user, userData, storage, db } from '$lib/firebase';
+  import { doc, updateDoc } from 'firebase/firestore';
+  import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 
   let previewURL: string;
   let uploading = false;
@@ -16,7 +16,7 @@
     const result = await uploadBytes(storageRef, file);
     const url = await getDownloadURL(result.ref);
 
-    await updateDoc(doc(db, "users", $user!.uid), { photoURL: url });
+    await updateDoc(doc(db, 'users', $user!.uid), { photoURL: url });
 
     URL.revokeObjectURL(previewURL);
     uploading = false;
@@ -28,7 +28,7 @@
 
   <form class="max-w-screen-md w-full">
     <div class="form-control w-full max-w-xs my-10 mx-auto text-center">
-      <img 
+      <img
         src={previewURL ?? $userData?.photoURL ?? `default/default-avatar.png`}
         alt="photoURL"
         class="mx-auto"
