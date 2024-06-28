@@ -6,6 +6,7 @@
   import Footer from '$lib/components/ui/sections/Footer.svelte';
   import ImageTiles from '$lib/components/ui/sections/ImageTiles.svelte';
   import SubHero from '$lib/components/ui/sections/SubHero.svelte';
+  import SideImageSticky from '$lib/components/ui/sections/SideImageSticky.svelte';
   import { spring } from 'svelte/motion';
   import { onMount } from 'svelte';
 
@@ -49,31 +50,9 @@
 
 <SubHero />
 
-<div class="text-center pb-12">
-  <h2 class="text-4xl p-6">We Care About Your Journey</h2>
-  <p class="text-gray-500 text-xl">
-    Each team member contributes a unique set of skills and passion,
-  </p>
-  <p class="text-gray-500 text-xl">
-    united by a shared commitment to delivering exceptional healthcare
-  </p>
-  <p class="text-gray-500 text-xl">experiences.</p>
-</div>
-
-<div class="flex justify-center pb-24">
-  <div class="shadow-xl max-w-2xl">
-    <figure>
-      <img
-        class="rounded-bl-lg rounded-br-lg rounded-tl-lg rounded-tr-lg"
-        src="smiling-young-male-professional.jpg"
-        alt="Young Male Professional"
-      />
-    </figure>
-  </div>
-</div>
+<SideImageSticky />
 
 <CardWithImage />
 
 <ContactForm />
 
-<Footer />

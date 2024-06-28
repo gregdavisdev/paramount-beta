@@ -6,7 +6,10 @@ export default {
   },
   plugins: [
     require('daisyui'),
-    require('@tailwindcss/forms')
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/container-queries')
   ]
 };
 

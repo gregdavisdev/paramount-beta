@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Footer from '$lib/components/ui/sections/Footer.svelte';
   import { user, userData } from '$lib/firebase';
   import '../app.css';
 
@@ -65,6 +66,9 @@
   </div>
 </div>
 
+
 <div class="min-h-screen flex flex-col">
   <slot />
 </div>
+
+<Footer />
