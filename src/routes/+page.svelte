@@ -7,6 +7,7 @@
   import ImageTiles from '$lib/components/ui/sections/ImageTiles.svelte';
   import SubHero from '$lib/components/ui/sections/SubHero.svelte';
   import { spring } from 'svelte/motion';
+  import { onMount } from 'svelte';
 
   let scale = spring(1, { stiffness: 1, damping: 0.6 });
 </script>
