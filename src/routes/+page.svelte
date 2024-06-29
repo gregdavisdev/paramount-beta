@@ -3,7 +3,6 @@
   import SplineViewer from '$lib/components/ui/animations/SplineViewer.svelte';
   import CardWithImage from '$lib/components/ui/sections/CardWithImage.svelte';
   import ContactForm from '$lib/components/ui/sections/ContactForm.svelte';
-  import Footer from '$lib/components/ui/sections/Footer.svelte';
   import ImageTiles from '$lib/components/ui/sections/ImageTiles.svelte';
   import SubHero from '$lib/components/ui/sections/SubHero.svelte';
   import SideImageSticky from '$lib/components/ui/sections/SideImageSticky.svelte';
